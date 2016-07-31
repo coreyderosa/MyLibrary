@@ -77,3 +77,17 @@ VALUES(1, 'God'),
 	(23, 'Robert Kiyosaki'),
 	(24, 'Markus Zusak'),
 	(25, 'J. R. R. Tolkien')
+
+CREATE TABLE tblLibrary_Branch
+(
+BranchID int PRIMARY KEY NOT NULL,
+BranchName varchar(max) NOT NULL,
+[Address] varchar(max) NULL
+)
+INSERT INTO tblLibrary_Branch
+VALUES(1, 'Sharpstown', '123 Sharpstown Dr, Colorado Springs, CO 80920'),
+	(2, 'Central', '456 Central St, Colorado Springs, CO 80909'),
+	(3, 'East Side', '789 East Side Ave, Colorado Springs, CO 80915'),
+	(4, 'Downtown', '2 Downtown Blvd, Colorado Springs, CO 80903'),
+	(5, 'Books on Wheels', NULL)
+
