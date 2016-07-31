@@ -46,3 +46,34 @@ VALUES(1, 'Holy Bible', NULL),
 	(24, 'Book Thief', NULL),
 	(25, 'The Hobbit', NULL)
 
+CREATE TABLE tblBook_Authors
+(
+BookID int PRIMARY KEY NOT NULL,
+AuthorName varchar(max) NULL
+)
+INSERT INTO tblBook_Authors
+VALUES(1, 'God'),
+	(2, 'Stephen King'),
+	(3, 'Orson Scott Card'),
+	(4, 'Mark Twain'),
+	(5, 'Paulo Coelho'),
+	(6, 'George Samuel Clason'),
+	(7, 'Dan Brown'),
+	(8, 'Mark Lee'),
+	(9, 'Yann Martel'),
+	(10, 'Ralph Ellison'),
+	(11, 'H. G. Wells'),
+	(12, 'William Golding'),
+	(13, 'J. R. R. Tolkien'),
+	(14, 'J. R. R. Tolkien'),
+	(15, 'Dave Ramsey'),
+	(16, 'Napoleon Hill'),
+	(17, 'Dan Brown'),
+	(18, 'Spencer Johnson'),
+	(19, 'Mary Shelley'),
+	(20, 'George Orwell'),
+	(21, 'Aldous Huxley'),
+	(22, 'George Orwell'),
+	(23, 'Robert Kiyosaki'),
+	(24, 'Markus Zusak'),
+	(25, 'J. R. R. Tolkien')
