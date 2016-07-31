@@ -11,3 +11,10 @@ GO
 
 USE dbMyLibrary
 GO
+
+CREATE TABLE tblBook
+(
+BookID int PRIMARY KEY NOT NULL,
+Title varchar(max) NOT NULL,
+PublisherName varchar(max) NULL
+)
