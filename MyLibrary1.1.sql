@@ -195,3 +195,13 @@ VALUES(1, 'Don Johnson', '123 Johnson Dr, Colorado Springs, CO 80903', '719-555-
 	(8, 'King Kon', NULL, '719-555-5664'),
 	(9, 'Bruce Wayne', '1 Gotham Place, Colorado Springs, CO 80915', '719-555-0258'),
 	(10, 'Joe Sakic', '111 Stanley Cup Dr, Colorado Springs, CO 80909', NULL)
+
+
+CREATE TABLE tblBook_Loans
+(
+BookID int NOT NULL,
+BranchID int NOT NULL,
+CardNO int NOT NULL,
+DateOut date NOT NULL,
+DueDate date NOT NULL
+)
