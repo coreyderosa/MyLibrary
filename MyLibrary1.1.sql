@@ -176,3 +176,22 @@ VALUES(1, 1, 2),
 	(22, 5, 4),
 	(23, 5, 2),
 	(25, 5, 2)
+
+CREATE TABLE tblBorrower
+(
+CardNO int PRIMARY KEY NOT NULL,
+BorrowerName varchar(max) NOT NULL,
+BorrowerAddress varchar(max) NULL,
+BorrowerPhone varchar(20) NULL
+)
+INSERT INTO tblBorrower
+VALUES(1, 'Don Johnson', '123 Johnson Dr, Colorado Springs, CO 80903', '719-555-1234'),
+	(2, 'Donald Trump', '456 Trump St, Colorado Springs, CO 80905', '719-555-7737'),
+	(3, 'Hillary Clinton', '789 Clinton Ave, Colorado Springs, CO 80910', '719-555-3862'),
+	(4, 'Joe Broney', '2 Broney Blvd, Colorado Springs, CO 80915', '719-555-4663'),
+	(5, 'JoAnne Bronifer', '2468 Bronifer Lane, Colorado Springs, CO 80909', NULL),
+	(6, 'Dr. Dre', '999 Beats Dr, Colorado Springs, CO 80903', '719-555-4325'),
+	(7, 'Homer Simpson', '456 Homer St, Colorado Springs, CO 80905', '719-555-4568'),
+	(8, 'King Kon', NULL, '719-555-5664'),
+	(9, 'Bruce Wayne', '1 Gotham Place, Colorado Springs, CO 80915', '719-555-0258'),
+	(10, 'Joe Sakic', '111 Stanley Cup Dr, Colorado Springs, CO 80909', NULL)
