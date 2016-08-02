@@ -94,8 +94,8 @@ VALUES(1, 'Sharpstown', '123 Sharpstown Dr, Colorado Springs, CO 80920'),
 
 CREATE TABLE tblBook_Copies
 (
-BookID int NOT NULL,
-BranchID int NOT NULL,
+BookID int FOREIGN KEY REFERENCES tblBook(BookID) NOT NULL,
+BranchID int FOREIGN KEY REFERENCES tblLibrary_Branch(BranchID) NOT NULL,
 No_Of_Copies int NOT NULL
 )
 INSERT INTO tblBook_Copies
@@ -199,8 +199,8 @@ VALUES(1, 'Don Johnson', '123 Johnson Dr, Colorado Springs, CO 80903', '719-555-
 
 CREATE TABLE tblBook_Loans
 (
-BookID int NOT NULL,
-BranchID int NOT NULL,
+BookID int FOREIGN KEY REFERENCES tblBook(BookID) NOT NULL,
+BranchID int FOREIGN KEY REFERENCES tblLibrary_Branch(BranchID) NOT NULL,
 CardNO int NOT NULL,
 DateOut date NULL,
 DueDate date NULL
