@@ -214,7 +214,7 @@ VALUES(1, 1, 1, '2016-08-01', '2016-08-16'),
 	(5, 1, 5, NULL, NULL),
 	(6, 1, 6, NULL, NULL),
 	(7, 1, 7, '2016-05-11', '2016-05-25'),
-	(8, 1, 8, '2015-04-22', '2015-07-22'),
+	(8, 1, 9, '2015-04-22', '2015-07-22'),
 	(9, 1, 9, NULL, NULL),
 	(10, 1, 10, NULL, NULL),
 	(11, 1, 1, '2014-01-30', '2014-05-03'),
@@ -224,7 +224,7 @@ VALUES(1, 1, 1, '2016-08-01', '2016-08-16'),
 	(15, 1, 5, '2015-02-28', '2016-02-29'),
 	(16, 1, 6, NULL, NULL),
 	(17, 1, 7, NULL, NULL),
-	(18, 1, 8, '2015-09-12', '2016-09-27'),
+	(18, 1, 7, '2015-09-12', '2016-09-27'),
 	(19, 1, 9, NULL, NULL),
 	(20, 1, 10, '2015-08-01', '2015-10-19'),
 	(21, 1, 1, NULL, NULL),
@@ -272,7 +272,7 @@ VALUES(1, 1, 1, '2016-08-01', '2016-08-16'),
 	(4, 5, 10, '2012-09-10', '2013-10-11'),
 	(6, 5, 3, NULL, NULL),
 	(7, 5, 4, NULL, NULL),
-	(9, 5, 8, '2015-11-12', '2015-12-13'),
+	(9, 5, 6, '2015-11-12', '2015-12-13'),
 	(10, 5, 5, NULL, NULL),
 	(11, 5, 3, '2016-06-22', '2016-07-23'),
 	(13, 5, 4, NULL, NULL),
@@ -284,3 +284,26 @@ VALUES(1, 1, 1, '2016-08-01', '2016-08-16'),
 	(22, 5, 4, NULL, NULL),
 	(23, 5, 2, NULL, NULL),
 	(25, 5, 2, '2015-08-15', '2015-09-01')
+
+
+--SQL Queries: 
+--#1
+USE dbMyLibrary
+GO
+
+SELECT *
+FROM tblLibrary_Branch AS LB, tblBook AS B, tblBook_Copies AS BC
+WHERE LB.BranchID = BC.BranchID
+	AND B.Title = 'The Lost Tribe'
+	AND LB.BranchName = 'Sharpstown'
+	AND BC.BookID = '8'
+
+--#2
+USE dbMyLibrary
+GO
+
+SELECT BC.No_Of_Copies, B.Title, LB.BranchName
+FROM tblBook_Copies AS BC, tblBook AS B, tblLibrary_Branch AS LB
+WHERE Title = 'The Lost Tribe'
+	AND BC.BookID = '8'
+	AND BC.BranchID = LB.BranchID
