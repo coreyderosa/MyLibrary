@@ -285,7 +285,7 @@ VALUES(1, 1, 1, '2016-08-01', '2016-08-03'),
 	(23, 5, 2, NULL, NULL),
 	(25, 5, 2, '2015-08-15', '2015-09-01')
 
-
+/*
 --SQL Queries: 
 --#1
 USE dbMyLibrary
@@ -318,3 +318,20 @@ LEFT JOIN tblBook_Loans AS BL
 ON BR.CardNO = BL.CardNO
 WHERE BR.CardNO NOT IN (SELECT CardNO FROM tblBook_Loans)
 
+--4
+USE dbMyLibrary
+GO
+
+SELECT LB.BranchName, BO.Title, BL.DueDate, BR.BorrowerName, BR.BorrowerAddress 
+FROM tblLibrary_Branch AS LB
+INNER JOIN tblBook_Loans AS BL
+ON LB.BranchID = BL.BranchID
+INNER JOIN tblBorrower AS BR
+ON BL.CardNO = BR.CardNO
+INNER JOIN tblBook AS BO
+ON BL.BookID = BO.BookID
+WHERE LB.BranchName = 'Sharpstown'
+AND BL.DueDate = '08-03-2016'
+
+
+*/
