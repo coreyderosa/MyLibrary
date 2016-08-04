@@ -239,7 +239,7 @@ VALUES(1, 1, 1, '2016-08-01', '2016-08-16'),
 	(9, 2, 10, NULL, NULL),
 	(11, 2, 2, NULL, NULL),
 	(13, 2, 4, NULL, NULL),
-	(15, 2, 8, NULL, NULL),
+	(15, 2, 2, NULL, NULL),
 	(17, 2, 2, NULL, NULL),
 	(19, 2, 5, '2016-07-04', '2016-07-11'),
 		(21, 2, 3, '2016-06-10', '2016-07-09'),
@@ -307,3 +307,14 @@ FROM tblBook_Copies AS BC, tblBook AS B, tblLibrary_Branch AS LB
 WHERE Title = 'The Lost Tribe'
 	AND BC.BookID = '8'
 	AND BC.BranchID = LB.BranchID
+
+--#3
+USE dbMyLibrary
+GO
+
+SELECT *
+FROM tblBorrower AS BR
+LEFT JOIN tblBook_Loans AS BL
+ON BR.CardNO = BL.CardNO
+WHERE BR.CardNO NOT IN (SELECT CardNO FROM tblBook_Loans)
+
