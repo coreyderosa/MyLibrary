@@ -318,7 +318,7 @@ LEFT JOIN tblBook_Loans AS BL
 ON BR.CardNO = BL.CardNO
 WHERE BR.CardNO NOT IN (SELECT CardNO FROM tblBook_Loans)
 
---4
+--#4
 USE dbMyLibrary
 GO
 
@@ -333,7 +333,7 @@ ON BL.BookID = BO.BookID
 WHERE LB.BranchName = 'Sharpstown'
 AND BL.DueDate = '08-03-2016'
 
---5
+--#5
 --Finds total books loaned out that have not been returned to respective branch(assuming all borrowers have returned books by due date).  Shows total books out for all branches--
 USE dbMyLibrary
 GO
@@ -347,4 +347,28 @@ INNER JOIN tblLibrary_Branch AS LB
 ON BL.BranchID = LB.BranchID
 WHERE BL.DueDate > @dueDate
 GROUP BY ROLLUP(BranchName)
+
+
+--#6USE dbMyLibrary
+GO
+
+DECLARE @dueDate DATE
+SET @dueDate = GETDATE()
+
+SELECT COUNT(BL.CardNO) AS NumberOfBooksCheckedOut, BR.BorrowerName, BR.BorrowerAddress
+FROM tblBook_Loans AS BL
+INNER JOIN tblBorrower as BR
+ON BL.CardNO = BR.CardNO
+WHERE BL.DueDate > @dueDate
+GROUP BY BR.BorrowerName, BR.BorrowerAddress
+HAVING COUNT(BL.BookID) >= 5
+
+
+
+
+
+
+
+
+
 */
