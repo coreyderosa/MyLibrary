@@ -370,9 +370,4 @@ GO
 
 DECLARE @author varchar(max)SET @author = 'Stephen King'DECLARE @branch varchar(max)SET @branch = 'Central'SELECT BO.Title, BA.AuthorName, BC.No_Of_Copies, LB.BranchNameFROM tblBook_Copies as BCINNER JOIN tblBook as BOON BC.BookID = BO.BookIDINNER JOIN tblBook_Authors AS BAON BC.BookID = BA.BookIDINNER JOIN tblLibrary_Branch AS LBON BC.BranchID = LB.BranchIDWHERE BA.AuthorName = @author	AND LB.BranchName = @branch
 
-
-
-
-
-
 */
